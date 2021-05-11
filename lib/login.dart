@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:mock_flutter_app/account.dart';
 
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          resizeToAvoidBottomInset: false,
           body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -49,7 +51,7 @@ class Login extends StatelessWidget {
                     width: double.infinity,
                     height: 48.0,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Account()));},
                       child: Text('LOGIN TO YOUR ACCOUNT'),
                     ),
                   ),

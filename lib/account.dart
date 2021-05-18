@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mock_flutter_app/forgot_password.dart';
 
 class Account extends StatelessWidget {
   @override
@@ -45,12 +46,19 @@ class Account extends StatelessWidget {
                           width: double.infinity,
                           height: 50.0,
                           child: ElevatedButton(
-                            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Account()));},
+                            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotPassword()));},
                             child: Text('ENTER TO YOUR ACCOUNT'),
                           ),
                         ),
                         SizedBox(height: 24),
-                        Text('SWITCH TO A DIFFERENT ACCOUNT'),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotPassword()));
+                          },
+                          child: Text(
+                              'SWITCH TO A DIFFERENT ACCOUNT'
+                          ),
+                        ),
                       ],
                     ),
           )

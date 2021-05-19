@@ -10,7 +10,6 @@ class Account extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-              flex: 3,
               child: Container(
                 child: Center(
                   child: Column(
@@ -35,7 +34,6 @@ class Account extends StatelessWidget {
               )
           ),
           Expanded(
-              flex: 1,
               child: Container(
                 padding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
                     child: Column(

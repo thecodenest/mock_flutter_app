@@ -4,9 +4,8 @@ import 'package:mock_flutter_app/account.dart';
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-          resizeToAvoidBottomInset: false,
+    return Scaffold(
+        resizeToAvoidBottomInset: true,
           body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -88,7 +87,7 @@ class Login extends StatelessWidget {
             ),
           )
         ],
-      )),
+      )
     );
   }
 }

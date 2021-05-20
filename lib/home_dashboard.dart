@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mock_flutter_app/edit_profile.dart';
+import 'package:mock_flutter_app/notifications.dart';
+import 'package:mock_flutter_app/setting.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class Home extends StatefulWidget {
@@ -39,13 +42,27 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       drawer: Drawer(
         child: Column(
           children: [
-            UserAccountsDrawerHeader(
-              accountName: Text("Jacob Watson"),
-              accountEmail: Text("Senior Product Designer"),
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.lightBlue,
+            SizedBox(height: 32),
+            DrawerHeader(
+                child: Center(
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Color(0xff9397F4),
+                        radius: 30,
+                        child: Text(
+                          'JW',
+                          style: TextStyle(fontSize: 25, color: Colors.white),
+                        ),
+                      ),
+                      SizedBox(height: 12),
+                      Text('Jacob Watson', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                      SizedBox(height: 8),
+                      Text('Senior Product Designer'),
+                    ],
+                  ),
+                ),
               ),
-            ),
             ListTile(
               title: Text('Home'),
               onTap: (){},
@@ -59,7 +76,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             ),
             ListTile(
               title: Text('Notification'),
-              onTap: (){},
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Notifications()));
+              },
               leading: Icon(Icons.notifications),
             ),
             Padding(
@@ -81,7 +101,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             ),
             ListTile(
               title: Text('Profile'),
-              onTap: (){},
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Profile()));
+                },
               leading: Icon(Icons.person_rounded),
             ),
             Padding(
@@ -92,7 +115,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             ),
             ListTile(
               title: Text('Settings'),
-              onTap: (){},
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Settings()));
+              },
               leading: Icon(Icons.settings),
             ),
             Padding(
